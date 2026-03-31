@@ -4,43 +4,125 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Data Industry Digest</title>
+        <title>Data Engineering Weekly News | Data With Dhana</title>
         <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
         <style>
-            body { background-color: #f3f4f6; font-family: 'Inter', sans-serif; }
+            body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #020617; color: #f8fafc; }
+            .news-card {
+                background: #0f172a;
+                border: 1px solid rgba(255,255,255,0.05);
+                transition: all 0.3s ease;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                height: 100%;
+            }
+            .news-card:hover {
+                border-color: #22d3ee;
+                background: #111827;
+                transform: translateY(-4px);
+                box-shadow: 0 20px 40px -20px rgba(34, 211, 238, 0.2);
+            }
         </style>
     </head>
-    <body class="py-10">
-        <div class="max-w-4xl mx-auto p-6 bg-white shadow-lg rounded-lg">
-  <h1 class="text-3xl font-bold mb-4">Weekly Data Insights</h1>
-  <div class="flex flex-wrap justify-center mb-4">
-    <div class="w-full md:w-1/2 xl:w-1/2 p-6">
-      <div class="bg-gray-100 rounded-lg p-4 mb-4">
-        <h2 class="text-xl font-bold mb-2">dbt Update</h2>
-        <p class="text-gray-600 mb-2">Sentiment: Positive</p>
-        <div class="card bg-white rounded-lg p-4 mb-4 shadow-sm">
-          <h3 class="text-lg font-bold mb-2">Introducing the dbt Community Champions Program</h3>
-          <p class="text-gray-600 mb-2">dbt has announced a new community champions program to recognize and support its community leaders.</p>
-          <a href="https://www.getdbt.com/blog/introducing-the-dbt-community-champions-program" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Read More</a>
-        </div>
-      </div>
+    <body class="p-6 md:p-16 lg:p-24">
+        <div class="max-w-6xl mx-auto">
+            <header class="mb-20 text-center md:text-left border-b border-slate-800 pb-12">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tighter mb-4">
+                    Data Engineering <span class="text-cyan-400">Weekly News</span>
+                </h1>
+                <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+                    <p class="text-slate-500 font-semibold uppercase tracking-widest text-[10px]">
+                        Architectural Insights by Data With Dhana
+                    </p>
+                    <p class="text-cyan-500 font-mono text-sm bg-cyan-500/5 px-4 py-1 rounded-full border border-cyan-500/20">
+                        31 March 2026
+                    </p>
+                </div>
+            </header>
+
+            <main>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div class="bg-[#0f172a] border-1px border-[#1e293b] p-8 rounded-2xl">
+        <div class="absolute top-0 right-0 p-2 text-sm text-white">01</div>
+        <div class="text-[#22d3ee] font-bold text-xs uppercase">DBT</div>
+        <div class="text-white font-bold text-xl">Introducing the dbt Community Champions Program</div>
+        <div class="text-slate-400">The dbt Community Champions Program is a new initiative that aims to recognize and support the most active and impactful members of the dbt community. This program will provide a platform for community members to share their knowledge and expertise with others.</div>
+        <a href="https://www.getdbt.com/blog/introducing-the-dbt-community-champions-program" class="text-[#22d3ee]">Read Source →</a>
     </div>
-    <div class="w-full md:w-1/2 xl:w-1/2 p-6">
-      <div class="bg-gray-100 rounded-lg p-4 mb-4">
-        <h2 class="text-xl font-bold mb-2">Airbyte Update</h2>
-        <p class="text-gray-600 mb-2">Sentiment: Informative</p>
-        <div class="card bg-white rounded-lg p-4 mb-4 shadow-sm">
-          <h3 class="text-lg font-bold mb-2">Curing my AI Agent’s Amnesia</h3>
-          <p class="text-gray-600 mb-2">Airbyte has shared a blog post on how to fix an AI agent's memory issues, providing insights into AI development and maintenance.</p>
-          <a href="https://airbyte.com/blog/fixing-agent-memory" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Read More</a>
-        </div>
-      </div>
+    <div class="bg-[#0f172a] border-1px border-[#1e293b] p-8 rounded-2xl">
+        <div class="absolute top-0 right-0 p-2 text-sm text-white">02</div>
+        <div class="text-[#22d3ee] font-bold text-xs uppercase">Airbyte</div>
+        <div class="text-white font-bold text-xl">Curing my AI Agent’s Amnesia</div>
+        <div class="text-slate-400">The article discusses how to fix the issue of an AI agent's amnesia, where the agent forgets its previous actions and decisions. The solution involves implementing a memory mechanism that allows the agent to recall its past experiences.</div>
+        <a href="https://airbyte.com/blog/fixing-agent-memory" class="text-[#22d3ee]">Read Source →</a>
     </div>
-  </div>
+    <div class="bg-[#0f172a] border-1px border-[#1e293b] p-8 rounded-2xl">
+        <div class="absolute top-0 right-0 p-2 text-sm text-white">03</div>
+        <div class="text-[#22d3ee] font-bold text-xs uppercase">DuckDB</div>
+        <div class="text-white font-bold text-xl">Announcing DuckDB 1.5.1</div>
+        <div class="text-slate-400">The latest version of DuckDB, a columnar database management system, has been released. This version includes several new features and improvements, such as support for JSON data type and enhanced query optimization.</div>
+        <a href="https://duckdb.org/2026/03/23/announcing-duckdb-151.html" class="text-[#22d3ee]">Read Source →</a>
+    </div>
+    <div class="bg-[#0f172a] border-1px border-[#1e293b] p-8 rounded-2xl">
+        <div class="absolute top-0 right-0 p-2 text-sm text-white">04</div>
+        <div class="text-[#22d3ee] font-bold text-xs uppercase">StarRocks</div>
+        <div class="text-white font-bold text-xl">How to Manage Schema Migrations in StarRocks with SQLAlchemy and Alembic</div>
+        <div class="text-slate-400">The article provides a tutorial on how to manage schema migrations in StarRocks, a cloud-native database management system, using SQLAlchemy and Alembic. It covers the basics of schema migration and provides examples of how to use the tools.</div>
+        <a href="https://www.starrocks.io/blog/how-to-manage-schema-migrations-in-starrocks-with-sqlalchemy-and-alembic" class="text-[#22d3ee]">Read Source →</a>
+    </div>
+    <div class="bg-[#0f172a] border-1px border-[#1e293b] p-8 rounded-2xl">
+        <div class="absolute top-0 right-0 p-2 text-sm text-white">05</div>
+        <div class="text-[#22d3ee] font-bold text-xs uppercase">StarRocks</div>
+        <div class="text-white font-bold text-xl">StarRocks Monitor & Alert Guide_Part 2: Cluster Service Health</div>
+        <div class="text-slate-400">The article provides a guide on how to monitor and alert cluster service health in StarRocks. It covers the basics of monitoring and alerting, and provides examples of how to use the tools to ensure cluster health.</div>
+        <a href="https://www.starrocks.io/blog/starrocks-monitor-alert-guide_part-2-cluster-service-health" class="text-[#22d3ee]">Read Source →</a>
+    </div>
+    <div class="bg-[#0f172a] border-1px border-[#1e293b] p-8 rounded-2xl">
+        <div class="absolute top-0 right-0 p-2 text-sm text-white">06</div>
+        <div class="text-[#22d3ee] font-bold text-xs uppercase">Microsoft Fabric</div>
+        <div class="text-white font-bold text-xl">Sensitivity labels in Fabric for public APIs (Generally Available)</div>
+        <div class="text-slate-400">The article announces the general availability of sensitivity labels in Microsoft Fabric for public APIs. This feature allows users to classify and protect sensitive data in their APIs.</div>
+        <a href="https://blog.fabric.microsoft.com/en-US/blog/sensitivity-labels-in-fabric-for-public-apis-generally-available/" class="text-[#22d3ee]">Read Source →</a>
+    </div>
+    <div class="bg-[#0f172a] border-1px border-[#1e293b] p-8 rounded-2xl">
+        <div class="absolute top-0 right-0 p-2 text-sm text-white">07</div>
+        <div class="text-[#22d3ee] font-bold text-xs uppercase">Microsoft Fabric</div>
+        <div class="text-white font-bold text-xl">Modernize your ADF pipelines to unlock Fabric</div>
+        <div class="text-slate-400">The article provides a tutorial on how to modernize Azure Data Factory (ADF) pipelines to unlock the full potential of Microsoft Fabric. It covers the basics of ADF and Fabric, and provides examples of how to use the tools to modernize pipelines.</div>
+        <a href="https://blog.fabric.microsoft.com/en-US/blog/modernize-your-adf-pipelines-to-unlock-fabric/" class="text-[#22d3ee]">Read Source →</a>
+    </div>
+    <div class="bg-[#0f172a] border-1px border-[#1e293b] p-8 rounded-2xl">
+        <div class="absolute top-0 right-0 p-2 text-sm text-white">08</div>
+        <div class="text-[#22d3ee] font-bold text-xs uppercase">Microsoft Fabric</div>
+        <div class="text-white font-bold text-xl">Compute auto-scaling choices to better optimize price-performance for SQL databases in Microsoft Fabric (Preview)</div>
+        <div class="text-slate-400">The article announces the preview of compute auto-scaling choices in Microsoft Fabric for SQL databases. This feature allows users to optimize the price-performance of their databases by automatically scaling compute resources.</div>
+        <a href="https://blog.fabric.microsoft.com/en-US/blog/compute-auto-scaling-choices-to-better-optimize-price-performance-for-sql-databases-in-microsoft-fabric-preview/" class="text-[#22d3ee]">Read Source →</a>
+    </div>
+    <div class="bg-[#0f172a] border-1px border-[#1e293b] p-8 rounded-2xl">
+        <div class="absolute top-0 right-0 p-2 text-sm text-white">09</div>
+        <div class="text-[#22d3ee] font-bold text-xs uppercase">Microsoft Fabric</div>
+        <div class="text-white font-bold text-xl">Introducing capacity overage: Flexibility when you need it most (Preview)</div>
+        <div class="text-slate-400">The article announces the preview of capacity overage in Microsoft Fabric. This feature allows users to temporarily exceed their allocated capacity to handle unexpected increases in workload.</div>
+        <a href="https://blog.fabric.microsoft.com/en-US/blog/introducing-capacity-overage-preview-flexibility-when-you-need-it-most/" class="text-[#22d3ee]">Read Source →</a>
+    </div>
+    <div class="bg-[#0f172a] border-1px border-[#1e293b] p-8 rounded-2xl">
+        <div class="absolute top-0 right-0 p-2 text-sm text-white">10</div>
+        <div class="text-[#22d3ee] font-bold text-xs uppercase">AWS Big Data</div>
+        <div class="text-white font-bold text-xl">Secure multi-warehouse Amazon Redshift access behind a Network Load Balancer using Microsoft Entra ID</div>
+        <div class="text-slate-400">The article provides a tutorial on how to securely access multiple Amazon Redshift warehouses behind a Network Load Balancer using Microsoft Entra ID. It covers the basics of Redshift and Entra ID, and provides examples of how to use the tools to secure access.</div>
+        <a href="https://aws.amazon.com/blogs/big-data/secure-multi-warehouse-amazon-redshift-access-behind-a-network-load-balancer-using-microsoft-entra-id" class="text-[#22d3ee]">Read Source →</a>
+    </div>
 </div>
-        <footer class="text-center text-gray-400 mt-8 text-sm">
-            Updated on March 31, 2026 | Generated by AI
-        </footer>
+            </main>
+
+            <footer class="mt-32 text-center py-10 border-t border-slate-900">
+                <p class="text-slate-600 text-[9px] tracking-[0.5em] uppercase">
+                    &copy; 2026 Data With Dhana • Curated by AI
+                </p>
+            </footer>
+        </div>
     </body>
     </html>
     
