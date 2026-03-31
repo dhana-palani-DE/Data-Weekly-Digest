@@ -4,6 +4,8 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- BASE TARGET: This is the ultimate fix. It tells the browser to open ALL links on this page in a new tab by default. -->
+        <base target="_blank"> 
         <title>Data Engineering Weekly News | Data With Dhana</title>
         <script src="https://cdn.tailwindcss.com"></script>
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -22,11 +24,11 @@
             }
         </style>
     </head>
-    <body class="p-6 md:p-16 lg:p-24">
+    <body class="p-6 md:p-16">
         <div class="max-w-6xl mx-auto">
             <header class="mb-20 text-center md:text-left border-b border-slate-800 pb-12">
-                <h1 class="text-2xl md:text-4xl font-extrabold text-white tracking-tighter mb-4 leading-none">
-                Data Engineering <span class="text-cyan-400">Weekly News</span>
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tighter mb-4 leading-none">
+                    Data Engineering <span class="text-cyan-400">Weekly News</span>
                 </h1>
                 <div class="flex flex-col md:flex-row justify-between items-center gap-4">
                     <p class="text-slate-500 font-semibold uppercase tracking-[0.3em] text-[10px]">
@@ -43,84 +45,84 @@
 
             <main>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-  <div class="bg-[#0f172a] border border-[#1e293b] rounded-xl" style="border-top: 4px solid #FF694B;">
-    <div class="p-4">
-      <span class="text-[#FF694B] text-xs uppercase font-bold">DBT</span>
+  <div class="card bg-[#0f172a] border border-[#1e293b] rounded-xl" style="border-top: 5px solid #FF694B">
+    <div class="card-body">
+      <span class="text-[#FF694B] font-bold text-lg">DBT</span>
       <h2 class="text-white font-bold text-xl">Introducing the dbt Community Champions Program</h2>
-      <p class="text-slate-400">The dbt Community Champions Program is a new initiative that aims to recognize and support the most active and engaged members of the dbt community. This program will provide a platform for community members to share their knowledge and expertise with others.</p>
-      <a href="https://www.getdbt.com/blog/introducing-the-dbt-community-champions-program" class="text-[#FF694B]">Read More</a>
+      <p class="text-slate-400">The dbt Community Champions Program is a new initiative that aims to recognize and support the most active and engaged members of the dbt community. This program will provide a platform for community leaders to share their knowledge and expertise with others.</p>
+      <a href="https://www.getdbt.com/blog/introducing-the-dbt-community-champions-program" target="_blank" class="text-white">Read More</a>
     </div>
   </div>
-  <div class="bg-[#0f172a] border border-[#1e293b] rounded-xl" style="border-top: 4px solid #6132FF;">
-    <div class="p-4">
-      <span class="text-[#6132FF] text-xs uppercase font-bold">AIRBYTE</span>
+  <div class="card bg-[#0f172a] border border-[#1e293b] rounded-xl" style="border-top: 5px solid #6132FF">
+    <div class="card-body">
+      <span class="text-[#6132FF] font-bold text-lg">AIRBYTE</span>
       <h2 class="text-white font-bold text-xl">Curing my AI Agent’s Amnesia</h2>
-      <p class="text-slate-400">This article discusses the challenges of developing AI agents and the importance of addressing their amnesia. The author shares their experience of overcoming these challenges and provide insights into the development process.</p>
-      <a href="https://airbyte.com/blog/fixing-agent-memory" class="text-[#6132FF]">Read More</a>
+      <p class="text-slate-400">In this article, we will explore how to fix the issue of an AI agent's amnesia in Airbyte. We will discuss the causes of this problem and provide solutions to overcome it. With these solutions, you can ensure that your AI agent retains its memory and functions effectively.</p>
+      <a href="https://airbyte.com/blog/fixing-agent-memory" target="_blank" class="text-white">Read More</a>
     </div>
   </div>
-  <div class="bg-[#0f172a] border border-[#1e293b] rounded-xl" style="border-top: 4px solid #FFF000;">
-    <div class="p-4">
-      <span class="text-[#FFF000] text-xs uppercase font-bold">DUCKDB</span>
+  <div class="card bg-[#0f172a] border border-[#1e293b] rounded-xl" style="border-top: 5px solid #FFF000">
+    <div class="card-body">
+      <span class="text-[#FFF000] font-bold text-lg">DUCKDB</span>
       <h2 class="text-white font-bold text-xl">Announcing DuckDB 1.5.1</h2>
-      <p class="text-slate-400">The latest version of DuckDB has been released, which includes several new features and improvements. The article highlights the key changes and provides information on how to upgrade to the new version.</p>
-      <a href="https://duckdb.org/2026/03/23/announcing-duckdb-151.html" class="text-[#FFF000]">Read More</a>
+      <p class="text-slate-400">We are excited to announce the release of DuckDB 1.5.1, which includes several new features and improvements. This version provides better performance, improved support for JSON data, and enhanced security features.</p>
+      <a href="https://duckdb.org/2026/03/23/announcing-duckdb-151.html" target="_blank" class="text-white">Read More</a>
     </div>
   </div>
-  <div class="bg-[#0f172a] border border-[#1e293b] rounded-xl" style="border-top: 4px solid #3D3DFF;">
-    <div class="p-4">
-      <span class="text-[#3D3DFF] text-xs uppercase font-bold">STARROCKS</span>
+  <div class="card bg-[#0f172a] border border-[#1e293b] rounded-xl" style="border-top: 5px solid #3D3DFF">
+    <div class="card-body">
+      <span class="text-[#3D3DFF] font-bold text-lg">STARRROCKS</span>
       <h2 class="text-white font-bold text-xl">How to Manage Schema Migrations in StarRocks with SQLAlchemy and Alembic</h2>
-      <p class="text-slate-400">This article provides a guide on how to manage schema migrations in StarRocks using SQLAlchemy and Alembic. It covers the basics of schema migrations and provides examples of how to implement them.</p>
-      <a href="https://www.starrocks.io/blog/how-to-manage-schema-migrations-in-starrocks-with-sqlalchemy-and-alembic" class="text-[#3D3DFF]">Read More</a>
+      <p class="text-slate-400">In this article, we will discuss how to manage schema migrations in StarRocks using SQLAlchemy and Alembic. We will provide a step-by-step guide on how to use these tools to ensure smooth schema migrations.</p>
+      <a href="https://www.starrocks.io/blog/how-to-manage-schema-migrations-in-starrocks-with-sqlalchemy-and-alembic" target="_blank" class="text-white">Read More</a>
     </div>
   </div>
-  <div class="bg-[#0f172a] border border-[#1e293b] rounded-xl" style="border-top: 4px solid #3D3DFF;">
-    <div class="p-4">
-      <span class="text-[#3D3DFF] text-xs uppercase font-bold">STARROCKS</span>
+  <div class="card bg-[#0f172a] border border-[#1e293b] rounded-xl" style="border-top: 5px solid #3D3DFF">
+    <div class="card-body">
+      <span class="text-[#3D3DFF] font-bold text-lg">STARRROCKS</span>
       <h2 class="text-white font-bold text-xl">StarRocks Monitor & Alert Guide_Part 2: Cluster Service Health</h2>
-      <p class="text-slate-400">This article is the second part of a series on StarRocks monitoring and alerting. It focuses on cluster service health and provides guidance on how to monitor and alert on cluster service health metrics.</p>
-      <a href="https://www.starrocks.io/blog/starrocks-monitor-alert-guide_part-2-cluster-service-health" class="text-[#3D3DFF]">Read More</a>
+      <p class="text-slate-400">This article provides a comprehensive guide on how to monitor and alert cluster service health in StarRocks. We will discuss the importance of monitoring and provide a step-by-step guide on how to set up alerts.</p>
+      <a href="https://www.starrocks.io/blog/starrocks-monitor-alert-guide_part-2-cluster-service-health" target="_blank" class="text-white">Read More</a>
     </div>
   </div>
-  <div class="bg-[#0f172a] border border-[#1e293b] rounded-xl" style="border-top: 4px solid #00A4EF;">
-    <div class="p-4">
-      <span class="text-[#00A4EF] text-xs uppercase font-bold">MICROSOFT FABRIC</span>
+  <div class="card bg-[#0f172a] border border-[#1e293b] rounded-xl" style="border-top: 5px solid #00A4EF">
+    <div class="card-body">
+      <span class="text-[#00A4EF] font-bold text-lg">MICROSOFT FABRIC</span>
       <h2 class="text-white font-bold text-xl">How Stibo Systems’ MDM powers trusted data for analytics and AI in Microsoft Fabric (Preview)</h2>
-      <p class="text-slate-400">This article discusses how Stibo Systems' Master Data Management (MDM) solution powers trusted data for analytics and AI in Microsoft Fabric. It highlights the benefits of using MDM in Microsoft Fabric.</p>
-      <a href="https://blog.fabric.microsoft.com/en-US/blog/how-stibo-systems-mdm-powers-trusted-data-for-analytics-and-ai-in-microsoft-fabric-preview/" class="text-[#00A4EF]">Read More</a>
+      <p class="text-slate-400">In this article, we will explore how Stibo Systems' MDM powers trusted data for analytics and AI in Microsoft Fabric. We will discuss the importance of trusted data and provide insights into how MDM can help achieve this goal.</p>
+      <a href="https://blog.fabric.microsoft.com/en-US/blog/how-stibo-systems-mdm-powers-trusted-data-for-analytics-and-ai-in-microsoft-fabric-preview/" target="_blank" class="text-white">Read More</a>
     </div>
   </div>
-  <div class="bg-[#0f172a] border border-[#1e293b] rounded-xl" style="border-top: 4px solid #00A4EF;">
-    <div class="p-4">
-      <span class="text-[#00A4EF] text-xs uppercase font-bold">MICROSOFT FABRIC</span>
+  <div class="card bg-[#0f172a] border border-[#1e293b] rounded-xl" style="border-top: 5px solid #00A4EF">
+    <div class="card-body">
+      <span class="text-[#00A4EF] font-bold text-lg">MICROSOFT FABRIC</span>
       <h2 class="text-white font-bold text-xl">Sensitivity labels in Fabric for public APIs (Generally Available)</h2>
-      <p class="text-slate-400">This article announces the general availability of sensitivity labels in Microsoft Fabric for public APIs. It explains how sensitivity labels can help protect sensitive data in public APIs.</p>
-      <a href="https://blog.fabric.microsoft.com/en-US/blog/sensitivity-labels-in-fabric-for-public-apis-generally-available/" class="text-[#00A4EF]">Read More</a>
+      <p class="text-slate-400">This article announces the general availability of sensitivity labels in Fabric for public APIs. We will discuss the benefits of using sensitivity labels and provide guidance on how to get started.</p>
+      <a href="https://blog.fabric.microsoft.com/en-US/blog/sensitivity-labels-in-fabric-for-public-apis-generally-available/" target="_blank" class="text-white">Read More</a>
     </div>
   </div>
-  <div class="bg-[#0f172a] border border-[#1e293b] rounded-xl" style="border-top: 4px solid #00A4EF;">
-    <div class="p-4">
-      <span class="text-[#00A4EF] text-xs uppercase font-bold">MICROSOFT FABRIC</span>
+  <div class="card bg-[#0f172a] border border-[#1e293b] rounded-xl" style="border-top: 5px solid #00A4EF">
+    <div class="card-body">
+      <span class="text-[#00A4EF] font-bold text-lg">MICROSOFT FABRIC</span>
       <h2 class="text-white font-bold text-xl">Modernize your ADF pipelines to unlock Fabric</h2>
-      <p class="text-slate-400">This article provides guidance on how to modernize Azure Data Factory (ADF) pipelines to unlock Microsoft Fabric. It explains the benefits of modernizing ADF pipelines and provides steps to follow.</p>
-      <a href="https://blog.fabric.microsoft.com/en-US/blog/modernize-your-adf-pipelines-to-unlock-fabric/" class="text-[#00A4EF]">Read More</a>
+      <p class="text-slate-400">In this article, we will discuss how to modernize your ADF pipelines to unlock the full potential of Microsoft Fabric. We will provide guidance on how to migrate your existing pipelines and take advantage of Fabric's features.</p>
+      <a href="https://blog.fabric.microsoft.com/en-US/blog/modernize-your-adf-pipelines-to-unlock-fabric/" target="_blank" class="text-white">Read More</a>
     </div>
   </div>
-  <div class="bg-[#0f172a] border border-[#1e293b] rounded-xl" style="border-top: 4px solid #22d3ee;">
-    <div class="p-4">
-      <span class="text-[#22d3ee] text-xs uppercase font-bold">AWS BIG DATA</span>
+  <div class="card bg-[#0f172a] border border-[#1e293b] rounded-xl" style="border-top: 5px solid #22d3ee">
+    <div class="card-body">
+      <span class="text-[#22d3ee] font-bold text-lg">AWS BIG DATA</span>
       <h2 class="text-white font-bold text-xl">Automated tag-based DAG permission management in Amazon MWAA</h2>
-      <p class="text-slate-400">This article discusses the automated tag-based DAG permission management feature in Amazon MWAA. It explains how this feature can help simplify permission management and improve security.</p>
-      <a href="https://aws.amazon.com/blogs/big-data/automated-tag-based-dag-permission-management-in-amazon-mwaa/" class="text-[#22d3ee]">Read More</a>
+      <p class="text-slate-400">This article introduces automated tag-based DAG permission management in Amazon MWAA. We will discuss the benefits of this feature and provide a step-by-step guide on how to implement it.</p>
+      <a href="https://aws.amazon.com/blogs/big-data/automated-tag-based-dag-permission-management-in-amazon-mwaa/" target="_blank" class="text-white">Read More</a>
     </div>
   </div>
-  <div class="bg-[#0f172a] border border-[#1e293b] rounded-xl" style="border-top: 4px solid #22d3ee;">
-    <div class="p-4">
-      <span class="text-[#22d3ee] text-xs uppercase font-bold">AWS BIG DATA</span>
+  <div class="card bg-[#0f172a] border border-[#1e293b] rounded-xl" style="border-top: 5px solid #22d3ee">
+    <div class="card-body">
+      <span class="text-[#22d3ee] font-bold text-lg">AWS BIG DATA</span>
       <h2 class="text-white font-bold text-xl">Secure multi-warehouse Amazon Redshift access behind a Network Load Balancer using Microsoft Entra ID</h2>
-      <p class="text-slate-400">This article provides a guide on how to secure multi-warehouse Amazon Redshift access behind a Network Load Balancer using Microsoft Entra ID. It explains the benefits of using this approach and provides steps to follow.</p>
-      <a href="https://aws.amazon.com/blogs/big-data/secure-multi-warehouse-amazon-redshift-access-behind-a-network-load-balancer-using-microsoft-entra-id/" class="text-[#22d3ee]">Read More</a>
+      <p class="text-slate-400">In this article, we will discuss how to secure multi-warehouse Amazon Redshift access behind a Network Load Balancer using Microsoft Entra ID. We will provide a step-by-step guide on how to set up this secure access.</p>
+      <a href="https://aws.amazon.com/blogs/big-data/secure-multi-warehouse-amazon-redshift-access-behind-a-network-load-balancer-using-microsoft-entra-id/" target="_blank" class="text-white">Read More</a>
     </div>
   </div>
 </div>
