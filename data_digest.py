@@ -7,7 +7,23 @@ from dotenv import load_dotenv
 load_dotenv()
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
-# 1. INDUSTRY FEEDS
+# 1. INDUSTRY FEEDS & BRAND COLORS
+# Mapping brand colors for the AI to use
+BRAND_COLORS = {
+    "dbt": "#FF694B",
+    "Databricks": "#FF3621",
+    "Snowflake": "#29B5E8",
+    "Airbyte": "#6132FF",
+    "Google Cloud": "#4285F4",
+    "AWS": "#FF9900",
+    "Microsoft Fabric": "#00A4EF",
+    "Confluent": "#EA2B91",
+    "DuckDB": "#FFF000",
+    "Dagster": "#4F43E8",
+    "StarRocks": "#3D3DFF",
+    "Pinecone": "#22C55E"
+}
+
 FEEDS = {
     "dbt": "https://www.getdbt.com/blog/rss.xml",
     "Databricks": "https://www.databricks.com/blog/feed",
@@ -26,7 +42,7 @@ FEEDS = {
 def fetch_weekly_news():
     digest_input = []
     now = datetime.datetime.now(datetime.timezone.utc)
-    print("Selecting top articles for DataWithDhana...")
+    print("Selecting top articles and mapping brand colors...")
     for source, url in FEEDS.items():
         try:
             feed = feedparser.parse(url)
@@ -35,7 +51,9 @@ def fetch_weekly_news():
                 if date_tuple:
                     pub_date = datetime.datetime(*date_tuple[:6], tzinfo=datetime.timezone.utc)
                     if (now - pub_date).days <= 10: 
-                        digest_input.append(f"COMPANY: {source} | TITLE: {entry.title} | LINK: {entry.link}")
+                        # Attach the hex color to the input text
+                        color = BRAND_COLORS.get(source, "#22d3ee")
+                        digest_input.append(f"COMPANY: {source} | COLOR: {color} | TITLE: {entry.title} | LINK: {entry.link}")
         except: continue
     return "\n".join(digest_input)
 
@@ -47,15 +65,15 @@ def generate_html_content(news_text):
     
     STYLE RULES:
     - GRID: Use <div class="grid grid-cols-1 md:grid-cols-2 gap-8">.
-    - CARD STYLE: Background #0f172a, Border 1px #1e293b, Padding 8 (p-8), Rounded-2xl.
-    - NO Markdown (no ```).
+    - CARD BASE: Background #0f172a, Border 1px #1e293b, Rounded-xl.
+    - BRANDING: Each card MUST have a 4px TOP-BORDER using the provided COMPANY COLOR.
     
     FOR EACH CARD (Top 10 Only):
-    1. A small, subtle '01' style index number in the top right.
-    2. Company Badge: Cyan text (#22d3ee), bold, uppercase, small text.
-    3. Title: White text, font-bold, text-xl, 2-line limit.
+    1. Apply the COMPANY COLOR hex to the top border.
+    2. Company Badge: Use the COLOR for the text, uppercase, bold.
+    3. Title: White text, font-bold, text-xl.
     4. Strategic Impact: 2 sentences max in slate-400 text.
-    5. 'Read Source' Link: Simple cyan link with an arrow (→).
+    5. 'Read More' Link: Styled with the brand color.
     
     NEWS DATA:
     {news_text}
@@ -63,7 +81,7 @@ def generate_html_content(news_text):
     
     completion = client.chat.completions.create(
         model="llama-3.3-70b-versatile",
-        messages=[{"role": "system", "content": "Return ONLY raw HTML tags. No backticks."},
+        messages=[{"role": "system", "content": "Return ONLY raw HTML tags. Do not use markdown backticks or ```html blocks."},
                   {"role": "user", "content": prompt}]
     )
     
@@ -84,33 +102,32 @@ def save_as_html_file(ai_content):
             .news-card {{
                 background: #0f172a;
                 border: 1px solid rgba(255,255,255,0.05);
-                transition: all 0.3s ease;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
                 height: 100%;
             }}
             .news-card:hover {{
-                border-color: #22d3ee;
+                transform: translateY(-5px);
                 background: #111827;
-                transform: translateY(-4px);
-                box-shadow: 0 20px 40px -20px rgba(34, 211, 238, 0.2);
+                box-shadow: 0 15px 30px -10px rgba(0,0,0,0.5);
             }}
         </style>
     </head>
     <body class="p-6 md:p-16 lg:p-24">
         <div class="max-w-6xl mx-auto">
             <header class="mb-20 text-center md:text-left border-b border-slate-800 pb-12">
-                <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tighter mb-4">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tighter mb-4 leading-none">
                     Data Engineering <span class="text-cyan-400">Weekly News</span>
                 </h1>
                 <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                    <p class="text-slate-500 font-semibold uppercase tracking-widest text-[10px]">
+                    <p class="text-slate-500 font-semibold uppercase tracking-[0.3em] text-[10px]">
                         Architectural Insights by Data With Dhana
                     </p>
-                    <p class="text-cyan-500 font-mono text-sm bg-cyan-500/5 px-4 py-1 rounded-full border border-cyan-500/20">
-                        {datetime.date.today().strftime('%d %B %Y')}
-                    </p>
+                    <div class="flex items-center gap-2">
+                        <span class="w-2 h-2 bg-red-500 rounded-full animate-pulse"></span>
+                        <p class="text-cyan-500 font-mono text-sm tracking-widest uppercase">
+                            {datetime.date.today().strftime('%d %B %Y')}
+                        </p>
+                    </div>
                 </div>
             </header>
 
@@ -118,9 +135,9 @@ def save_as_html_file(ai_content):
                 {ai_content}
             </main>
 
-            <footer class="mt-32 text-center py-10 border-t border-slate-900">
-                <p class="text-slate-600 text-[9px] tracking-[0.5em] uppercase">
-                    &copy; {datetime.datetime.now().year} Data With Dhana • Curated by AI
+            <footer class="mt-40 text-center py-10 border-t border-slate-900 opacity-40">
+                <p class="text-slate-600 text-[10px] tracking-[0.8em] uppercase">
+                    &copy; {datetime.datetime.now().year} Data With Dhana • Professional Digest
                 </p>
             </footer>
         </div>
@@ -135,4 +152,4 @@ if __name__ == "__main__":
     if news:
         html_cards = generate_html_content(news)
         save_as_html_file(html_cards)
-        print("Success: 10 Box-Tiles Generated.")
+        print("Success: Generated color-coded box tiles.")
